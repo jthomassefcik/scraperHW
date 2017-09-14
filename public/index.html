@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Article Scraper</title>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+    crossorigin="anonymous"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+</head>
+
+<body>
+  <div class="well">
+    <h1>Thought Scraper</h1>
+    <button id="seeArticles" class="btn btn-default">see articles</button>
+    <button id="scrapeArticles" class="btn btn-default">scrape articles</button>
+    
+    
+    
+    <table id="results" class="table-striped">
+      <thead>
+        <tr>
+          <th id="article-title">Title</th>
+          <th id="article-link">Link</th>
+          <th> id </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Results from DB here -->
+      </tbody>
+    </table>
+  </div>
+<script src="app.js"></script>
+<script id="articles-hbs-template" type="text/x-handlebars-template">
+      {{#each articles}}
+      <tr>
+        <td>{{title}}</td>
+        <td>{{link}}</td>
+        <td><button class="data-button" data-id="{{_id}}"></button></td>
+      </tr>
+      {{/each}}
+    </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+</body>
+
+</html>
